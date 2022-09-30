@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iweb/models/attendance.dart';
 import 'package:iweb/providers/attendanceProvider.dart';
 import 'package:iweb/widgets/MainDrawer.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -21,12 +19,12 @@ class _AttendanceReportState extends State<AttendanceReport> {
     return Scaffold(
       drawer: MainDrawer(),
       appBar: AppBar(
-        title: Text('Your Attendance Reports'),
+        title: const Text('Your Attendance Reports'),
         backgroundColor: Colors.black87,
       ),
       body:
       GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3/2,
           crossAxisSpacing: 30,
@@ -34,7 +32,7 @@ class _AttendanceReportState extends State<AttendanceReport> {
         ),
         itemBuilder: (ctx,i) => GridTile(
           child: Container(
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             child: Column(
               children: [
                 SizedBox(
@@ -47,13 +45,13 @@ class _AttendanceReportState extends State<AttendanceReport> {
                     animation: true,
                     percent: attdata[i].percent/100,
                     progressColor: Colors.orangeAccent,
-                    center: Text(attdata[i].percent.toString() + '%',softWrap: true, style: TextStyle(
+                    center: Text(attdata[i].percent.toString() + '%',softWrap: true, style: const TextStyle(
                       fontSize: 30,
                     ),),
                   ),
                 ),
-                SizedBox(height: 7,),
-                Text(attdata[i].subject,style: TextStyle(
+                const SizedBox(height: 7,),
+                Text(attdata[i].subject,style: const TextStyle(
                   fontSize: 18,
                 ),)
               ],

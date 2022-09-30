@@ -4,7 +4,6 @@ import 'package:iweb/widgets/MainDrawer.dart';
 import 'package:iweb/widgets/taskItems.dart';
 import 'package:provider/provider.dart';
 
-import '../models/task.dart';
 
 class TaskList extends StatelessWidget {
   static const routeName = "/tasklist";
@@ -18,7 +17,7 @@ class TaskList extends StatelessWidget {
       drawer: MainDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: Text(
+        title: const Text(
             'Your Task List'
         ),
       ),
